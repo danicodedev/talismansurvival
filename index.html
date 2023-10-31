@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background: url(https://www.wowrenaissance.com/img/background.png) no-repeat ;
+}
+
+.registration-form {
+    text-align: center;
+    margin: 100px;
+    padding: 30px;
+    border-radius: 0 7px 7px 0;
+    background-color: rgba(51, 34, 40, 1);
+    border: 10px solid #000000;
+}
+marquee {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 19px;
+    font-family: Quicksand, sans-serif;
+    color: #FFD800;
+    width: 975px;
+    background-color: #22171B;
+    padding: 7px;
+    border-radius: 10px;
+ }
+input {
+    margin: 5px;
+    padding: 10px;
+}
+
+button {
+    background-color: #00ff15a4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#payment-popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+</style>
+<body>
+    <marquee direction="left" behavior="scroll" scrollamount="8"><img src="img/icone/setaicon.png" alt=""> Evento de DONATE, quem comprar menos DONATE é corno.&nbsp;&nbsp;
+Ailton perde duel em todo server.&nbsp;&nbsp;
+Nocturnal parece o César Menott.&nbsp;&nbsp;
+Carlos só sabe vender em vez de jogar.&nbsp;&nbsp;
+Rian só fica forte com donate e corre de pk.&nbsp;&nbsp;</marquee>
+    <div class="registration-form">
+        <img style="width: 150px; border-radius: 100px" src="https://i.imgur.com/PW55V2M.png" alt="" srcset="">
+        <h1 style="color: white">Talisman Survival</h1>
+        <h2 style="color: white">Registro</h2>
+        <input type="text" placeholder="Login" id="login"><br>
+        <input type="password" placeholder="Senha" id="password"><br>
+        <input type="email" placeholder="Email" id="email"><br>
+        <label style="color: white" >Pergunta secreta: <br> Qual adm vende arma no pix?</label><br>
+        <input type="text" placeholder="nome do adm" id="text"><br>
+        <button id="register-button">Registrar</button>
+    </div>
+    <div id="payment-popup" class="hidden">
+        <p>Para se registrar, você precisa pagar R$10 no PIX.</p>
+        <p>Chave PIX: <span id="pix-key">1234567890</span></p>
+        <p><span>Atenção essa página é verdadeira acredite.</span></p>
+        <button id="confirm-payment">Confirmar</button>
+    </div>
+    <script src="script.js">
+        document.getElementById("register-button").addEventListener("click", function () {
+    document.getElementById("payment-popup").style.display = "block";
+});
+
+document.getElementById("confirm-payment").addEventListener("click", function () {
+    alert("Não foi possível reconhecer o pagamento.");
+});
+
+    </script>
+</body>
+</html>
